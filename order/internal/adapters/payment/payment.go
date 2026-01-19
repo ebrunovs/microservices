@@ -7,7 +7,9 @@ import (
     "github.com/ebrunovs/microservices-proto/golang/payment"
     "github.com/ebrunovs/microservices/order/internal/application/core/domain"
     "google.golang.org/grpc"
+    "google.golang.org/grpc/codes"
     "google.golang.org/grpc/credentials/insecure"
+    "google.golang.org/grpc/status"
 )
 
 type Adapter struct {
@@ -31,5 +33,12 @@ func (a *Adapter) Charge(order *domain.Order) error {
         OrderId:    order.ID,
         TotalPrice: order.TotalPrice(),
     })
-    return err
+    if err != nil {
+        code := status.Code(err)
+        if code == codes.InvalidArgument {
+            return err
+        }
+        return status.Errorf(codes.Internal, "failed to charge order. %v", err)
+    }
+    return nil
 }
