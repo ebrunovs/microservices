@@ -27,6 +27,7 @@ replace github.com/ebrunovs/microservices-proto/golang/order => ../../microservi
 
 require (
 	github.com/ebrunovs/microservices-proto/golang/payment v0.0.0-00010101000000-000000000000
+	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	gorm.io/gorm v1.30.0
 )
 
