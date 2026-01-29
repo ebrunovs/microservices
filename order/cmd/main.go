@@ -5,7 +5,7 @@ import (
 
 	"github.com/ebrunovs/microservices/order/config"
 	"github.com/ebrunovs/microservices/order/internal/adapters/db"
-	"github.com/ebrunovs/microservices/order/internal/adapters/payment"
+    payment "github.com/ebrunovs/microservices/order/internal/adapters/payment"
 
 	//"github.com/ebrunovs/microservices/order/internal/adapters/rest"
 	"github.com/ebrunovs/microservices/order/internal/adapters/grpc"
@@ -18,7 +18,7 @@ func main() {
     log.Println("Iniciando microsserviço Order...")
 
     dataSourceURL := config.GetDataSourceURL()
-    paymentServiceURL := config.GetPaymentServiceURL()
+    paymentServiceURL := config.GetPaymentServiceUrl()
     shippingServiceURL := config.GetShippingServiceURL()
     applicationPort := config.GetApplicationPort()
 

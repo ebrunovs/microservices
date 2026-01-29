@@ -37,5 +37,5 @@ func getEnvironmentValue(key string) string {
 }
 
 func GetShippingServiceURL() string {
-    return GetEnv("SHIPPING_SERVICE_URL", "localhost:9090")
+	return getEnvironmentValue("SHIPPING_SERVICE_URL")
 }

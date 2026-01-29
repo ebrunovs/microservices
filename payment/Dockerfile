@@ -1,11 +1,12 @@
-FROM golang:1.21-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 WORKDIR /app
 
 # Copia arquivos de dependências
 COPY go.mod go.sum ./
+# Instala o git para permitir download de dependências Go
+RUN apk add --no-cache git
 # Copia a pasta dos protos para dentro do contexto do build
-COPY ../microservices-proto/golang/payment ./microservices-proto/golang/payment
 
 RUN go mod download
 

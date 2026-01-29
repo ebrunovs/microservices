@@ -35,8 +35,8 @@ func (OrderItemModel) TableName() string {
 
 type StockModel struct {
     gorm.Model
-    ProductCode string `gorm:"uniqueIndex"`
-    Quantity    int32
+    ProductCode string `gorm:"size:50;not null;uniqueIndex"`
+    Quantity    int32  `gorm:"not null"`
 }
 
 func (StockModel) TableName() string {

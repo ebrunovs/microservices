@@ -1,6 +1,14 @@
 CREATE DATABASE IF NOT EXISTS `order`;
 USE `order`;
 
+CREATE TABLE IF NOT EXISTS stock (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	product_code VARCHAR(50) NOT NULL UNIQUE,
+	quantity INT NOT NULL,
+	created_at DATETIME NOT NULL,
+	updated_at DATETIME NOT NULL
+);
+
 INSERT INTO stock (product_code, quantity, created_at, updated_at) VALUES
 ('PROD001', 100, NOW(), NOW()),
 ('PROD002', 50, NOW(), NOW()),

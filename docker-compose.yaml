@@ -4,12 +4,11 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: order
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./order/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -24,6 +23,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      ENV: dev
       APPLICATION_PORT: "8080"
       DATA_SOURCE_URL: "root:password@tcp(mysql:3306)/order?parseTime=true"
       PAYMENT_SERVICE_URL: "payment:8081"
@@ -40,6 +40,7 @@ services:
     ports:
       - "8081:8081"
     environment:
+      ENV: dev
       APPLICATION_PORT: "8081"
       DATA_SOURCE_URL: "root:password@tcp(mysql:3306)/payment?parseTime=true"
     depends_on:

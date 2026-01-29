@@ -54,7 +54,7 @@ func (a *Adapter) Create(ctx context.Context, req *shipping.CreateShippingReques
 	var items []domain.ShippingItem
 	for _, item := range req.Items {
 		items = append(items, domain.ShippingItem{
-		ProctCode:		item.ProductCode,
+		ProductCode:		item.ProductCode,
 		Quantity:		item.Quantity,
 		})
 	}

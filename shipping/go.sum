@@ -1,5 +1,7 @@
 filippo.io/edwards25519 v1.1.0 h1:FNf4tywRC1HmFuKW5xopWpigGjJKiJSV0Cqo0cJWDaA=
 filippo.io/edwards25519 v1.1.0/go.mod h1:BxyFTGdWcka3PhytdK4V28tE5sGfRvvvRV7EaN4VDT4=
+github.com/ebrunovs/microservices-proto/golang/shipping v0.0.0-20260129214029-d377a6abe0f1 h1:Dte+b5rKxNblrarQAOdcn1GB6m5bug5vbqgjblkinzI=
+github.com/ebrunovs/microservices-proto/golang/shipping v0.0.0-20260129214029-d377a6abe0f1/go.mod h1:47187QEQD0iKC6xxEXnHvSoHJUlUnfmFW+i6vI6+7QI=
 github.com/go-logr/logr v1.4.3 h1:CjnDlHq8ikf6E492q6eKboGOC0T8CDaOvkHCIg8idEI=
 github.com/go-logr/logr v1.4.3/go.mod h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=
 github.com/go-logr/stdr v1.2.2 h1:hSWxHoqTgW2S2qGc0LTAI563KZ5YKYRhT3MFKZMbjag=

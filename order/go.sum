@@ -9,6 +9,12 @@ github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGX
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/ebrunovs/microservices-proto/golang/order v0.0.0-20260129214029-d377a6abe0f1 h1:q4lKzwKHXFqWJ6bD6XN6pz6ceQwRm0F5QkDkxQR0A5g=
+github.com/ebrunovs/microservices-proto/golang/order v0.0.0-20260129214029-d377a6abe0f1/go.mod h1:8eSQtM30kpVcUmkj1uzolNvAHzc5FPQlB+TnDhAN9rk=
+github.com/ebrunovs/microservices-proto/golang/payment v0.0.0-20260129214029-d377a6abe0f1 h1:wKw+oetlSLi9XLxypVe/9TKNMoaQOh6LLPPbGWGp53w=
+github.com/ebrunovs/microservices-proto/golang/payment v0.0.0-20260129214029-d377a6abe0f1/go.mod h1:ukKOl8Yb4pKc2oANuMcfl+AGO9etOBNyaLFKhlMzeh8=
+github.com/ebrunovs/microservices-proto/golang/shipping v0.0.0-20260129214029-d377a6abe0f1 h1:Dte+b5rKxNblrarQAOdcn1GB6m5bug5vbqgjblkinzI=
+github.com/ebrunovs/microservices-proto/golang/shipping v0.0.0-20260129214029-d377a6abe0f1/go.mod h1:47187QEQD0iKC6xxEXnHvSoHJUlUnfmFW+i6vI6+7QI=
 github.com/envoyproxy/go-control-plane v0.9.0/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.1-0.20191026205805-5f8ba28d4473/go.mod h1:YTl/9mNaCwkRvm6d1a2C3ymFceY/DCBVvsKhRF0iEA4=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=

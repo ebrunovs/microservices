@@ -37,7 +37,7 @@ func (a *Application) PlaceOrder(ctx context.Context, order domain.Order) (domai
     }
     log.Printf("Pedido salvo com ID: %d", savedOrder.ID)
 
-    err = a.payment.Charge(ctx, savedOrder)
+    err = a.payment.Charge(&savedOrder)
     if err != nil {
         log.Printf("Erro no pagamento do pedido %d: %v", savedOrder.ID, err)
         return domain.Order{}, err
