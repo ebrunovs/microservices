@@ -1,8 +1,13 @@
 package ports
 
-import "github.com/ebrunovs/microservices/order/internal/application/core/domain"
+import (
+    "context"
+
+    "github.com/ebrunovs/microservices/order/internal/application/core/domain"
+)
 
 type DBPort interface {
-	Get (id string) (domain.Order, error)
-	Save(*domain.Order) error
+    Save(ctx context.Context, order domain.Order) (domain.Order, error)
+
+    ValidateStock(ctx context.Context, items []domain.OrderItem) error
 }

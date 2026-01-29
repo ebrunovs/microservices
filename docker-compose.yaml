@@ -1,0 +1,64 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: order
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./order/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  order:
+    build:
+      context: ./order
+      dockerfile: Dockerfile
+    container_name: order
+    ports:
+      - "8080:8080"
+    environment:
+      APPLICATION_PORT: "8080"
+      DATA_SOURCE_URL: "root:password@tcp(mysql:3306)/order?parseTime=true"
+      PAYMENT_SERVICE_URL: "payment:8081"
+      SHIPPING_SERVICE_URL: "shipping:9090"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  payment:
+    build:
+      context: ./payment
+      dockerfile: Dockerfile
+    container_name: payment
+    ports:
+      - "8081:8081"
+    environment:
+      APPLICATION_PORT: "8081"
+      DATA_SOURCE_URL: "root:password@tcp(mysql:3306)/payment?parseTime=true"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  shipping:
+    build:
+      context: ./shipping
+      dockerfile: Dockerfile
+    container_name: shipping
+    ports:
+      - "9090:9090"
+    environment:
+      APPLICATION_PORT: "9090"
+      DATA_SOURCE_URL: "root:password@tcp(mysql:3306)/shipping?parseTime=true"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data:

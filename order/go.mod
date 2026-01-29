@@ -1,10 +1,10 @@
 module github.com/ebrunovs/microservices/order
 
-go 1.25.4
+go 1.21
 
 require (
 	github.com/ebrunovs/microservices-proto/golang/order v0.0.0-00010101000000-000000000000
-	google.golang.org/grpc v1.77.0
+	google.golang.org/grpc v1.78.0
 )
 
 require (
@@ -27,8 +27,11 @@ replace github.com/ebrunovs/microservices-proto/golang/order => ../../microservi
 
 require (
 	github.com/ebrunovs/microservices-proto/golang/payment v0.0.0-00010101000000-000000000000
+	github.com/ebrunovs/microservices-proto/golang/shipping v0.0.0-00010101000000-000000000000
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	gorm.io/gorm v1.30.0
 )
 
 replace github.com/ebrunovs/microservices-proto/golang/payment => ../../microservices-proto/golang/payment
+
+replace github.com/ebrunovs/microservices-proto/golang/shipping => ../../microservices-proto/golang/shipping
