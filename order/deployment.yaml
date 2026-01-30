@@ -25,6 +25,8 @@ spec:
               value: "8080"
             - name: DATA_SOURCE_URL
               value: "root:password@tcp(mysql:3306)/order?parseTime=true"
+            - name: ENV
+              value: "prod"
             - name: PAYMENT_SERVICE_URL
               value: "payment:8081"
             - name: SHIPPING_SERVICE_URL

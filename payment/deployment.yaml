@@ -36,14 +36,15 @@ spec:
         command: ['sh', '-c', 'until nslookup mysql; do echo waiting for mysql; sleep 10; done;']
       containers:
       - name: payment
-        image: payment
+        image: payment:latest
+        imagePullPolicy: Never
         env:
           - name: APPLICATION_PORT
             value : "8081"
           - name: ENV
             value: "prod"
           - name: DATA_SOURCE_URL
-            value : "root:s3cr3t@tcp(mysql:3306)/payments?charset=utf8mb4&parseTime=True&loc=Local"
+            value : "root:password@tcp(mysql:3306)/payments?charset=utf8mb4&parseTime=True&loc=Local"
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
